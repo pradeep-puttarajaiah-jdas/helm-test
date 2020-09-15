@@ -12,8 +12,10 @@ pipeline {
            sh 'helm repo update'
            // Linting
            sh 'helm lint'
+           // Application Deployment 
+           sh 'helm install test_chart ./mychart -n chart-test'
            // Chart testing
-           sh 'helm test mychart'
+           sh 'helm test test_chart -n chart-test'
            sh 'kubectl describe pod mychart'
           }
        }
