@@ -13,7 +13,7 @@ pipeline {
            // Linting
            sh 'helm lint mychart'
            // Application Deployment 
-           sh 'helm install test_chart ./mychart -n chart-test'
+           sh 'helm install test_chart mychart -n chart-test'
            // Chart testing
            sh 'helm test test_chart -n chart-test'
            sh 'kubectl describe pod mychart'
