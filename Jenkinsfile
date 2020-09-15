@@ -11,7 +11,7 @@ pipeline {
            // Update repo
            sh 'helm repo update'
            // Linting
-           sh 'helm lint'
+           sh 'helm lint mychart'
            // Application Deployment 
            sh 'helm install test_chart ./mychart -n chart-test'
            // Chart testing
